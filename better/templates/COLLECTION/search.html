@@ -1,0 +1,204 @@
+{% load count %}
+{% load search_tag %}
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title> SEARCH</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'css/search.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'fontawesome/css/all.min.css' %}">
+	<style type="text/css">
+		
+
+		/*.act{
+			margin-top: 40px;
+			background-image: url(../static/img/pinky.jpg);
+			padding: 10px;
+			font-size: 20px;
+			font-family: courier;
+		}
+		.all{
+			margin-top: 30px;
+		}*/
+	</style>
+
+
+</head>
+<body>
+
+
+
+	<div class="container">
+		<div header>
+		  <div class="navbar">
+			<div class="logo-name">
+				<div class="logo">
+				<img src="../static/img/writy.jpeg">
+			</div>
+				<div class="description">
+				<h2 class="name">Dripping<span><i>Pen</i></span></h2>
+				<i><p class="sub-name">Words Of Reality..</p></i>
+			</div>
+			</div>
+
+			<nav>
+				<ul id="menuitems">
+					<li><a href="{% url 'soft' %}">HOME</a></li>
+					<li><a href="/BLOG">BLOG</a></li>
+					<li><a href="/ABOUT_US">ABOUT-US</a></li>
+					<li><a href="/FAQs">FAQs</a></li>
+					<li><a href="/REGISTRATION">REGISTRATION</a></li>
+					<li><a href="/LOGIN">LOGIN</a></li>
+				</ul>
+
+			</nav>
+			 <img src="../static/img/icon.jpg" width="28px"class="menu-icon" onclick="menutoggle()">
+		</div>
+	</div>
+</div>
+<hr>
+
+  <div>
+    <div class="left">
+    	<a href="{% url 'soft' %}"><i class="fas fa-arrow-circle-left" aria-hidden="true"></i></a>
+    	<!-- <a href=""><i class="fas fa-hand-o-left" aria-hidden="true"></i></a>
+    	<a href=""><i class="fas fa-home" aria-hidden="true"></i>HOME</a> -->
+    </div>
+    </div>
+
+<div class="all">
+<div class="p">
+{{count}} result for {{query}}
+</div>
+{% for search in object_list %}
+{% with search|search_tag as one %}
+{% if one == "content" %}
+  <div class="box">
+  	<div class="image_author">
+  		<div class="image">
+  			<img src="{{search.image.url}}">
+  		</div>
+  		<center>
+  		<div class="writ">
+  			<a href="{% url 'blog_detail_view' search.id %}"><h2>{{search.title}}</h2></a>
+  			<p>{{search.sub_body}}</p>
+  		</div>
+  	</center>
+  	</div>
+  </div>
+
+
+  		{% elif one == "front" %}
+  		  <div class="box">
+  	<div class="image_author">
+  		<div class="image">
+  			<img src="{{search.image.url}}">
+  		</div>
+
+  		<div class="writ">
+  			<a href="{% url 'detail_view' search.id %}"><p>{{search.body}}</p></a>
+  		</div>
+  	</div>
+  </div>
+
+<!-- 
+  		{% elif one == "advert" %}
+  		  <div class="box">
+  	<div class="image_author">
+  		<div class="image">
+  			<img src="{{search.image.url}}">
+  		</div>
+
+  		<div class="writ">
+  			<h2>{{search.title}}</h2>
+  		</div>
+  	</div>
+  </div> -->
+
+
+
+  		{% elif one == "com_section" %}
+  		  <div class="box">
+  		<div class="writ">
+  			<h2>{{search.name}}</h2>
+  			<a href=""><p>{{search.message}}</p></a>
+  		</div>
+  	</div>
+
+
+  		{% elif one == "com_section_content" %}
+  		  <div class="box">
+  		<div class="writ">
+  			<h2>{{search.name}}</h2>
+  			<a href=""><p>{{search.message}}</p></a>
+  		</div>
+  	</div>
+
+
+	{% elif one == "mod_faq" %}
+  		  <div class="box">
+  		<div class="writ">
+  			<h2>{{search.name}}</h2>
+  			<a href=""><p>{{search.question}}</p></a>
+  		</div>
+  	</div>
+
+   
+   {% endif %}
+   {% endwith %}
+   {% endfor %}
+
+  	</div>
+	
+	
+
+	<center>
+
+{% if is_paginated %}
+<div class="design">
+	{% if page_obj.has_previous %}
+	<a href="?page={{page_obj.previous_page_number}}">&laquo</a>
+	{% else %}
+	<a class="disable" href="#">&laquo</a>
+	{% endif %}
+
+
+	{% for l in paginator.page_range %}
+	{% if page_obj.number == l %}
+	<a class="active" href="#">{{l}}</a>
+	{% else %}
+	<a href="?page={{l}}">{{l}}</a>
+	{% endif %}
+	{% endfor %}
+	
+
+
+	{% if page_obj.has_next %}
+	<a href="?page={{page_obj.next_page_number}}">&raquo</a>
+	{% else %}
+	<a class="disable" href="#">&raquo</a>
+	{% endif %}
+{% endif %}	
+</div>
+</center>
+	
+
+
+</body>
+<script type="text/javascript">
+var menuitems =document.getElementById("menuitems");
+
+		  menuitems.style.maxHeight ="0px";
+
+		function menutoggle(){
+			if(menuitems.style.maxHeight =="0px")
+			     {
+				     menuitems.style.maxHeight ="200px";
+			     }
+			else
+			     {
+				     menuitems.style.maxHeight ="0px";
+			     }
+		}
+	</script>
+</html>

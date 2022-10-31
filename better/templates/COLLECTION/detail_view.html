@@ -1,0 +1,132 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="{% static 'css/detail_view.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'fontawesome/css/all.min.css' %}">
+	<style type="text/css">
+
+
+		
+	</style>
+</head>
+<body>
+		<div class="container">
+		<div header>
+		  <div class="navbar">
+			<div class="logo-name">
+				<div class="logo">
+				<img src="../static/img/writy.jpeg">
+			</div>
+				<div class="description">
+				<h2 class="name">Dripping<span><i>Pen</i></span></h2>
+				<i><p class="sub-name">Words Of Reality..</p></i>
+			</div>
+			</div>
+
+			<nav>
+				<ul  id="menuitems">
+					<li><a href="{% url 'soft' %}">HOME</a></li>
+					<li><a href="/BLOG">BLOG</a></li>
+					<li><a href="/ABOUT_US">ABOUT-US</a></li>
+					<li><a href="/FAQs">FAQs</a></li>
+					<li><a href="/REGISTRATION">REGISTRATION</a></li>
+					<li><a href="/LOGIN">LOGIN</a></li>
+				</ul>
+
+	
+			</nav>
+		 <img src="../static/img/icon.jpg" class="menu-icon" onclick="menutoggle()">
+
+		</div>
+	</div>
+</div>
+<hr>
+
+    <div>
+    <div class="left">
+    	<a href="{% url 'soft' %}"><i class="fas fa-arrow-circle-left" aria-hidden="true"></i></a>
+    	<!-- <a href=""><i class="fas fa-hand-o-left" aria-hidden="true"></i></a>
+    	<a href=""><i class="fas fa-home" aria-hidden="true"></i>HOME</a> -->
+    </div>
+    </div>
+
+
+
+
+	<div class="mini-box">
+		<div class="cover-page">
+			<img src={{grace.image.url}} class="pix">
+			<div class="detail-title">
+			<i class="rate">{{grace.title}}..</i>
+			<p class="author">{{grace.name}}</p>
+		</div>
+		<div class="black">
+			<p>{{grace.body|linebreaks}}</p>
+		</div>
+		</div>
+	</div>
+
+
+
+<div class="comment_box">
+	<div class="total_comment">
+{% with comment.count as total_comment %}
+<p>{{total_comment}} comment{{total_count|pluralize}}</p>
+{% endwith  %}
+</div>
+
+
+
+
+{% if  new_comment %}
+<p>your comment has been added</p>
+{% else %}
+<p>add new comment</p>
+
+<div class="msg">
+<form method="post" action="{% url 'detail_view' grace.id %}" class="com_section"> 
+{{comment_form.as_p}}
+{% csrf_token %}
+<input type="submit" value="Add Comment">
+</form>
+</div>
+{% endif %}
+
+
+
+
+{% for comment in comment %}
+<div class="comment">
+	<small>comment{{forloop.counter}} by {{comment.name}}</small>
+	<div class="sect">
+	<p>{{comment.message|linebreaks}}</p>
+</div>
+
+</div>
+{% empty %}
+<p>no comment</p>
+{% endfor %}
+
+</div>
+
+</body>
+
+<script type="text/javascript">
+var menuitems =document.getElementById("menuitems");
+
+		  menuitems.style.maxHeight ="0px";
+
+		function menutoggle(){
+			if(menuitems.style.maxHeight =="0px")
+			     {
+				     menuitems.style.maxHeight ="200px";
+			     }
+			else
+			     {
+				     menuitems.style.maxHeight ="0px";
+			     }
+		}
+	</script>
+</html>

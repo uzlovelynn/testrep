@@ -1,0 +1,125 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="{% static 'css/BLOG.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'fontawesome/css/all.min.css' %}">
+	<style type="text/css">
+
+	</style>
+</head>
+<body>
+  -
+
+  <div class="container">
+		<div header>
+		  <div class="navbar">
+			<div class="logo-name">
+				<div class="logo">
+				<img src="../static/img/writy.jpeg">
+			</div>
+				<div class="description">
+				<h2 class="name">Dripping<span><i>Pen</i></span></h2>
+				<i><p class="sub-name">Words Of Reality..</p></i>
+			</div>
+			</div>
+
+			<nav>
+				<ul id="menuitems">
+					<li><a href="{% url 'soft' %}">HOME</a></li>
+					<li><a href="/BLOG">BLOG</a></li>
+					<li><a href="/ABOUT_US">ABOUT-US</a></li>
+					<li><a href="/FAQs">FAQs</a></li>
+					<li><a href="/REGISTRATION">REGISTRATION</a></li>
+					<li><a href="/LOGIN">LOGIN</a></li>
+				</ul>
+
+			</nav>
+			 <img src="../static/img/icon.jpg" width="28px"class="menu-icon" onclick="menutoggle()">
+
+		</div>
+	</div>
+</div>
+<hr>
+
+ <div>
+    <div class="left">
+    	<a href="{% url 'soft' %}"><i class="fas fa-arrow-circle-left" aria-hidden="true"></i></a>
+    	<!-- <a href=""><i class="fas fa-hand-o-left" aria-hidden="true"></i></a>
+    	<a href=""><i class="fas fa-home" aria-hidden="true"></i>HOME</a> -->
+    </div>
+    </div>
+
+<div class="prt_B">
+<div class="box">
+	{% for bottom in bottom %}
+	<div class="blogg">
+		<div class="image">
+			<img src={{bottom.image.url}}>
+		</div>
+
+		<div class="writeup">
+			<a href="{% url 'blog_detail_view' bottom.id %}"><h2>{{bottom.title}}</h2></a>
+			<i>{{bottom.name}}</i>
+			<a href="{% url 'blog_detail_view' bottom.id %}"><p>{{bottom.sub_body|linebreaks}}</p></a>
+		</div>
+	</div>
+	{% endfor %}
+
+	
+
+</div>
+</div>
+
+
+
+	<center>
+
+{% if is_paginated %}
+<div class="design">
+	{% if page_obj.has_previous %}
+	<a href="?page={{page_obj.previous_page_number}}">&laquo</a>
+	{% else %}
+	<a class="disable" href="#">&laquo</a>
+	{% endif %}
+
+
+	{% for l in paginator.page_range %}
+	{% if page_obj.number == l %}
+	<a class="active" href="#">{{l}}</a>
+	{% else %}
+	<a href="?page={{l}}">{{l}}</a>
+	{% endif %}
+	{% endfor %}
+	
+
+
+	{% if page_obj.has_next %}
+	<a href="?page={{page_obj.next_page_number}}">&raquo</a>
+	{% else %}
+	<a class="disable" href="#">&raquo</a>
+	{% endif %}
+{% endif %}	
+</div>
+</center>
+
+</body>
+<script type="text/javascript">
+
+var menuitems =document.getElementById("menuitems");
+
+		  menuitems.style.maxHeight ="0px";
+
+		function menutoggle(){
+			if(menuitems.style.maxHeight =="0px")
+			     {
+				     menuitems.style.maxHeight ="200px";
+			     }
+			else
+			     {
+				     menuitems.style.maxHeight ="0px";
+			     }
+		}
+	</script>
+</html>

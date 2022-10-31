@@ -1,0 +1,460 @@
+
+		*{
+			/*margin: ;*/
+			padding: 0;
+			box-sizing: border-box;
+		}
+		
+		 .container{
+		 	position: relative;bottom: 10px;
+		 	max-width: 1300;
+		 	margin: auto;
+		 	background:radial-gradient(#fff, #ffd6d6);
+		 	/*padding-left: 25px;
+		 	padding-right:25px; */
+		 }
+
+		.navbar{
+			display: flex;
+			align-items: center;
+			padding: 10px;
+		}
+
+		.logo-name{
+			display: flex;
+			align-items: center;
+		}
+
+		.logo-name img{
+			width: 70px;
+			margin-left:15px;
+			margin-top:5px;
+		}
+		.name{
+			margin-left: 10px;
+		}
+		.sub-name{
+			margin-left: 12px;
+			font-size: 11px;
+		}
+
+		 .description{
+		   	line-height: 10px;
+		   }
+		   
+		span{
+			color: red;
+			font-size: 28px;
+		}
+		nav{
+			flex: 1;
+			text-align: right;
+		}
+
+		nav ul{
+			display: inline-block;
+			list-style-type: none;
+		}
+
+		nav ul li{
+			display: inline-block;
+			margin-right: 25px;
+		}
+
+		nav li:hover{
+			background:red;
+			padding:5px;
+		}
+
+		nav a{
+			text-decoration: none;
+			color:#555;
+		}
+
+		hr{
+			color: red;
+			position: relative;bottom:10px; 
+		}
+
+		.prt_B{
+		 	max-width: 1000;
+		 	margin: auto;
+		}
+
+		.blogg{
+			display: flex;
+			align-items: center;
+			margin-top: 20px;
+
+		}
+
+		.image{
+			width: 100px;
+			position:relative;left: 20px;
+		}
+
+		.image img{
+			width: 100%;
+			border-radius: 10px;
+		}
+
+		.writeup{
+			position:relative;left: 50px;
+			/*flex: 1*/
+			width: 800px;
+			margin-bottom: 10px;
+		
+		}
+
+		.writeup a{
+			text-decoration: none;
+		}
+		 .menu-icon{
+		   	margin-left: 20px;
+		   	display: none;
+		   }
+
+
+
+
+
+
+ @media only screen and (max-width: 300px){
+	nav ul{
+		position: absolute;
+		top: 70px;
+		left: 0;
+		background: #333;
+		width: 100%;
+		overflow: hidden;
+		transition: max-height 0.5s;
+	}
+
+	nav ul li{
+		display:inline-block;
+		margin-right: 30px;
+		margin-top: 10px;
+		margin-bottom: 10px;
+		font-size: 10px;
+	}
+
+	nav ul li a{
+		color: #fff;
+	}
+
+
+	.menu-icon{
+		display: block;
+		cursor: pointer;
+		margin-right: 10px;
+		width: 30px;
+	}
+	.logo-name img{
+			width: 50px;
+			margin-left:15px;
+			margin-top:5px;
+		}
+		.name{
+			margin-left: 10px;
+			font-size: 10px;
+		}
+		.sub-name{
+			margin-left: 12px;
+			font-size: 10px;
+		}
+
+		 .description{
+		   	line-height: 10px;
+		   }
+		   
+		span{
+			color: red;
+			font-size: 25px;
+		}
+		.writeup{
+			position:relative;left: 25px;
+			/*flex: 1*/
+			width: 180px;
+			font-size: 10px;
+			margin-bottom: 10px;
+		
+		}
+
+		.image{
+			width: 50px;
+			position:relative;left: 7px;
+		}
+
+		.image img{
+			width: 100%;
+			border-radius: 10px;
+		}
+	 
+
+}
+
+ @media only screen and (max-width: 600px){
+nav ul{
+		position: absolute;
+		top: 70px;
+		left: 0;
+		background: #333;
+		width: 100%;
+		overflow: hidden;
+		transition: max-height 0.5s;
+	}
+
+	nav ul li{
+		display:inline-block;
+		margin-right: 30px;
+		margin-top: 10px;
+		margin-bottom: 10px;
+		font-size: 10px;
+	}
+
+	nav ul li a{
+		color: #fff;
+	}
+
+
+	.menu-icon{
+		display: block;
+		cursor: pointer;
+		margin-right: 10px;
+		width: 30px;
+	}
+	.logo-name img{
+			width: 50px;
+			margin-left:15px;
+			margin-top:5px;
+		}
+		.name{
+			margin-left: 10px;
+			font-size: 10px;
+		}
+		.sub-name{
+			margin-left: 12px;
+			font-size: 10px;
+		}
+
+		 .description{
+		   	line-height: 10px;
+		   }
+		   
+		span{
+			color: red;
+			font-size: 25px;
+		}
+		.writeup{
+			position:relative;left: 25px;
+			/*flex: 1*/
+			width: 60%;
+			font-size: 12px;
+			margin-bottom: 10px;
+			margin-top:27px; 
+		
+		}
+
+		.image{
+			width: 60px;
+			position:relative;left: 7px;
+		}
+
+		.image img{
+			width: 100%;
+			border-radius: 10px;
+		}
+	 
+
+ 	
+	}
+
+	@media only screen and (min-width: 601px){
+
+     
+     .logo-name img{
+			width: 40px;
+			margin-left:5px;
+			margin-top:5px;
+		}
+		.name{
+			margin-left: 10px;
+			font-size: 8px;
+		}
+		.sub-name{
+			margin-left: 12px;
+			font-size: 8px;
+		}
+
+		 .description{
+		   	line-height: 10px;
+		   }
+
+		 nav ul li{
+		display:inline-block;
+		margin-right: 30px;
+		margin-top: 10px;
+		margin-bottom: 10px;
+		font-size: 9px;
+	}
+
+	    nav ul{
+			display: inline-block;
+			list-style-type: none;
+			/*white-space: nowrap;*/
+			word-spacing: 1px;
+		}
+		   
+		span{
+			color: red;
+			font-size: 18px;
+		}
+		.writeup{
+			position:relative;left: 25px;
+			width: 70%;
+			font-size: 12px;
+			margin-bottom: 10px;
+		
+		}
+
+		.image{
+			width: 50px;
+			position:relative;left: 7px;
+		}
+
+		.image img{
+			width: 100%;
+			border-radius: 10px;
+		}
+	 }
+
+	 @media only screen and (min-width: 800px){
+	 	 .logo-name img{
+			width: 60px;
+			margin-left:5px;
+			margin-top:5px;
+		}
+		.name{
+			margin-left: 10px;
+			font-size: 12px;
+		}
+		.sub-name{
+			margin-left: 12px;
+			font-size: 11px;
+		}
+
+		 .description{
+		   	line-height: 10px;
+		   }
+
+		 nav ul li{
+		display:inline-block;
+		margin-right: 30px;
+		margin-top: 10px;
+		margin-bottom: 10px;
+		font-size: 12px;
+	}
+
+	    nav ul{
+			display: inline-block;
+			list-style-type: none;
+			/*white-space: nowrap;*/
+			/*word-spacing: 1px;*/
+		}
+		   
+		span{
+			color: red;
+			font-size: 20px;
+		}
+
+		.writeup{
+			position:relative;left: 25px;
+			width: 80%;
+			font-size: 13px;
+			margin-bottom: 10px;
+		
+		}
+
+		.image{
+			width: 50px;
+			position:relative;left: 7px;
+		}
+
+		.image img{
+			width: 100%;
+			border-radius: 10px;
+		}
+	}
+
+	 @media only screen and (min-width: 900px){
+	 	 .logo-name img{
+			width: 60px;
+			margin-left:5px;
+			margin-top:5px;
+		}
+		.name{
+			margin-left: 10px;
+			font-size: 15px;
+		}
+		.sub-name{
+			margin-left: 12px;
+			font-size: 12px;
+		}
+
+		 .description{
+		   	line-height: 10px;
+		   }
+
+		 nav ul li{
+		display:inline-block;
+		margin-right: 40px;
+		margin-top: 10px;
+		margin-bottom: 10px;
+		font-size: 15px;
+	}
+
+		.writeup{
+			position:relative;left: 25px;
+			width: 80%;
+			font-size: 15px;
+			margin-bottom: 10px;
+		
+		}
+
+		.image{
+			width: 60px;
+			position:relative;left: 7px;
+		}
+	 }
+
+	  @media only screen and (min-width: 1100px){
+	   nav ul li{
+		display:inline-block;
+		margin-right: 70px;
+		margin-top: 10px;
+		margin-bottom: 10px;
+		font-size: 15px;
+	}
+
+	.image{
+			width: 70px;
+			position:relative;left: 7px;
+		}
+		.logo-name img{
+			width: 65px;
+			margin-left:5px;
+			margin-top:5px;
+		}
+		.name{
+			margin-left: 10px;
+			font-size: 15px;
+		}
+		.sub-name{
+			margin-left: 12px;
+			font-size: 11px;
+		}
+		span{
+			color: red;
+			font-size: 25px;
+		}
+	  }

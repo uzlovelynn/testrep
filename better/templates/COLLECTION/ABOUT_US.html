@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		 .container{
+		 	max-width: 1300;
+		 	margin: auto;
+		 	background:radial-gradient(#fff, #ffd6d6);
+		 	/*padding-left: 25px;
+		 	padding-right:25px; */
+		 }
+
+		.navbar{
+			display: flex;
+			align-items: center;
+			padding: 10px;
+		}
+
+		.logo-name{
+			display: flex;
+			align-items: center;
+		}
+
+		.logo-name img{
+			width: 70px;
+			margin-left:15px;
+			margin-top:5px;
+		}
+		.name{
+			margin-left: 10px;
+		}
+		.sub-name{
+			margin-left: 12px;
+			font-size: 11px;
+		}
+
+		 .description{
+		   	line-height: 10px;
+		   }
+		   
+		span{
+			color: red;
+			font-size: 28px;
+		}
+		nav{
+			flex: 1;
+			text-align: right;
+		}
+
+		nav ul{
+			display: inline-block;
+			list-style-type: none;
+		}
+
+		nav ul li{
+			display: inline-block;
+			margin-right: 25px;
+		}
+
+		nav li:hover{
+			background:red;
+			padding:5px;
+		}
+
+		nav a{
+			text-decoration: none;
+			color:#555;
+		}
+
+		hr{
+			color: red;
+		}
+	</style>
+</head>
+<body>
+
+	<div class="container">
+		<div header>
+		  <div class="navbar">
+			<div class="logo-name">
+				<div class="logo">
+				<img src="../static/img/writy.jpeg">
+			</div>
+				<div class="description">
+				<h2 class="name">Dripping<span><i>Pen</i></span></h2>
+				<i><p class="sub-name">Words Of Reality..</p></i>
+			</div>
+			</div>
+
+			<nav>
+				<ul>
+					<li><a href="{% url 'soft' %}">HOME</a></li>
+					<li><a href="/BLOG">BLOG</a></li>
+					<li><a href="/ABOUT_US">ABOUT-US</a></li>
+					<li><a href="/FAQs">FAQs</a></li>
+					<li><a href="/REGISTRATION">REGISTRATION</a></li>
+					<li><a href="/LOGIN">LOGIN</a></li>
+				</ul>
+
+			</nav>
+		</div>
+	</div>
+</div>
+<hr>
+
+</body>
+</html>

@@ -1,0 +1,77 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="{% static 'css/LOGIN.css' %}">
+	<style type="text/css">	
+		.act{
+			background-image:url(../static/img/pinky.jpg);
+		}
+	</style>
+
+
+</head>
+<body>
+
+
+
+	<div class="container">
+		<div header>
+		  <div class="navbar">
+			<div class="logo-name">
+				<div class="logo">
+				<img src="../static/img/writy.jpeg">
+			</div>
+				<div class="description">
+				<h2 class="name">Dripping<span><i>Pen</i></span></h2>
+				<i><p class="sub-name">Words Of Reality..</p></i>
+			</div>
+			</div>
+
+			<nav>
+				<ul id="menuitems">
+					<li><a href="{% url 'soft' %}">HOME</a></li>
+					<li><a href="/BLOG">BLOG</a></li>
+					<li><a href="/ABOUT_US">ABOUT-US</a></li>
+					<li><a href="/FAQs">FAQs</a></li>
+					<li><a href="/REGISTRATION">REGISTRATION</a></li>
+					<li><a href="/LOGIN">LOGIN</a></li>
+				</ul>
+
+			</nav>
+			<img src="../static/img/icon.jpg" width="28px"class="menu-icon" onclick="menutoggle()">
+		</div>
+	</div>
+</div>
+<hr>
+
+
+<center>
+	<div active>
+<form class="act" action="." method="post">
+	 		{{form.as_p}}
+	 		{% csrf_token %}
+	 		<button type="submit" class="register"><i>REGISTER</i></button>
+	 	</form>
+	 </div>
+	 </center>
+</body>
+
+<script type="text/javascript">
+var menuitems =document.getElementById("menuitems");
+
+		  menuitems.style.maxHeight ="0px";
+
+		function menutoggle(){
+			if(menuitems.style.maxHeight =="0px")
+			     {
+				     menuitems.style.maxHeight ="200px";
+			     }
+			else
+			     {
+				     menuitems.style.maxHeight ="0px";
+			     }
+		}
+	</script>
+</html>

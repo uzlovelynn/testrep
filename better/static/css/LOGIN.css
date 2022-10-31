@@ -1,0 +1,193 @@
+ .container{
+		 	max-width: 1300;
+		 	margin: auto;
+		 	background:radial-gradient(#fff, #ffd6d6);
+		 	/*padding-left: 25px;
+		 	padding-right:25px; */
+		 }
+
+		.navbar{
+			display: flex;
+			align-items: center;
+			padding: 10px;
+		}
+
+		.logo-name{
+			display: flex;
+			align-items: center;
+		}
+
+		.logo-name img{
+			width: 70px;
+			margin-left:15px;
+			margin-top:5px;
+		}
+		.name{
+			margin-left: 10px;
+		}
+		.sub-name{
+			margin-left: 12px;
+			font-size: 11px;
+		}
+
+		 .description{
+		   	line-height: 10px;
+		   }
+		   
+		span{
+			color: red;
+			font-size: 28px;
+		}
+		nav{
+			flex: 1;
+			text-align: right;
+		}
+
+		nav ul{
+			display: inline-block;
+			list-style-type: none;
+		}
+
+		nav ul li{
+			display: inline-block;
+			margin-right: 25px;
+		}
+
+		nav li:hover{
+			background:red;
+			padding:5px;
+		}
+
+		nav a{
+			text-decoration: none;
+			color:#555;
+		}
+		.menu-icon{
+			display: none;
+		}
+
+		hr{
+			color: red;
+		}
+
+		.act{
+			margin-top: 40px;
+			background-image: url(../static/img/pinky.jpg);
+			padding: 10px;
+			font-size: 20px;
+			font-family: courier;
+		}
+/*.......media query..................*/
+
+@media only screen and (max-width: 600px){
+    nav ul{
+		position: absolute;
+		top: 70px;
+		left: 0;
+		background: #333;
+		width: 100%;
+		overflow: hidden;
+		transition: max-height 0.5s;
+	}
+	nav ul li{
+		display: inline-block;
+		margin-right: 25px;
+		font-size: 10px;
+		/*margin-right: 40px;
+		padding-right: 10px;*/
+		position: relative;right: 25px;
+		}
+
+	nav ul li a{
+		color: #fff;
+	}
+
+
+	.menu-icon{
+		display: block;
+		cursor: pointer;
+		/*margin-right: 10px;*/
+		width:30px;
+	}
+	 .logo-name img{
+			width: 40px;
+			margin-left:10px;
+			margin-top:5px;
+		}
+		.name{
+			margin-left: 10px;
+			font-size: 10px;
+		}
+		.sub-name{
+			margin-left: 12px;
+			font-size: 8px;
+		}
+		label{
+			font-size:15px;
+			color:gray;
+		}
+		.register:hover{
+    background:red;
+    color: white;
+		}
+	}
+
+	@media only screen and (min-width: 601px){
+     nav ul li{
+		display: inline-block;
+		margin-right: 20px;
+		font-size: 10px;
+	}
+	 .logo-name img{
+			width: 40px;
+			margin-left:10px;
+			margin-top:5px;
+		}
+		.name{
+			margin-left: 10px;
+			font-size: 10px;
+		}
+		.sub-name{
+			margin-left: 12px;
+			font-size: 8px;
+		}
+		label{
+			font-size:15px;
+			color:gray;
+		}
+}
+
+@media only screen and (min-width: 700px){
+     nav ul li{
+		display: inline-block;
+		margin-right: 25px;
+		font-size: 13px;
+	}
+	 .logo-name img{
+			width: 50px;
+			margin-left:10px;
+			margin-top:5px;
+		}
+	}
+
+	@media only screen and (min-width: 900px){
+	   nav ul li{
+		display: inline-block;
+		margin-right: 35px;
+		font-size: 15px;
+	}
+	 .logo-name img{
+			width: 60px;
+			margin-left:10px;
+			margin-top:5px;
+		}
+		.name{
+			margin-left: 10px;
+			font-size: 12px;
+		}
+		.sub-name{
+			margin-left: 12px;
+			font-size: 8px;
+		}
+	}
+

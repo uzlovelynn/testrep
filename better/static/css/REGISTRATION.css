@@ -1,0 +1,232 @@
+.register{
+			padding: 20px;
+			width: 400px;
+			font-family: courier;
+		}
+		body{
+			background-image:url(../static/img/landscape.jpg);
+		}
+		.helptext{
+			display: none;
+		}
+
+		li{
+			display: none;
+		}
+
+		input{
+			float: right;
+		}
+		label{
+			font-size: 20px;
+		}
+
+		 .container{
+		 	max-width: 1300;
+		 	margin: auto;
+		 	background:radial-gradient(#fff, #ffd6d6);
+		 	/*padding-left: 25px;
+		 	padding-right:25px; */
+		 }
+
+		.navbar{
+			display: flex;
+			align-items: center;
+			padding: 10px;
+		}
+
+		.logo-name{
+			display: flex;
+			align-items: center;
+		}
+
+		.logo-name img{
+			width: 70px;
+			margin-left:15px;
+			margin-top:5px;
+		}
+		.name{
+			margin-left: 10px;
+		}
+		.sub-name{
+			margin-left: 12px;
+			font-size: 11px;
+		}
+
+		 .description{
+		   	line-height: 10px;
+		   }
+		   
+		span{
+			color: red;
+			font-size: 28px;
+		}
+		nav{
+			flex: 1;
+			text-align: right;
+		}
+
+		nav ul{
+			display: inline-block;
+			list-style-type: none;
+		}
+
+		nav ul li{
+			display: inline-block;
+			margin-right: 25px;
+		}
+
+		nav li:hover{
+			background:red;
+			padding:5px;
+		}
+
+		nav a{
+			text-decoration: none;
+			color: white;
+		}
+
+		hr{
+			color: red;
+		}
+
+		.menu-icon{
+			display: none;
+		}
+/*........media query.......*/
+@media only screen and (max-width: 600px){
+    nav ul{
+		position: absolute;
+		top: 70px;
+		left: 0;
+		background: #333;
+		width: 100%;
+		overflow: hidden;
+		transition: max-height 0.5s;
+	}
+	nav ul li{
+		display: inline-block;
+		margin-right: 25px;
+		font-size: 10px;
+		/*margin-right: 40px;
+		padding-right: 10px;*/
+		position: relative;right: 25px;
+		}
+
+
+	/*nav ul li{
+		display:inline-block;
+		margin-right: px;
+		margin-top: 10px;
+		margin-bottom: 10px;
+		font-size: 8px;
+	}*/
+
+	nav ul li a{
+		color: #fff;
+	}
+
+
+	.menu-icon{
+		display: block;
+		cursor: pointer;
+		margin-right: 10px;
+		width: 30px;
+	}
+	 .logo-name img{
+			width: 40px;
+			margin-left:10px;
+			margin-top:5px;
+		}
+		.name{
+			margin-left: 10px;
+			font-size: 10px;
+		}
+		.sub-name{
+			margin-left: 12px;
+			font-size: 8px;
+		}
+		.register{
+			padding: 20px;
+			width: 150px;
+			font-family: courier;
+		}
+
+		.registration{
+			font-size: 15px;
+			color: white;
+		}
+
+		label{
+			font-size:15px;
+			color: white;
+		}
+		.link{
+			color: red;
+		}
+		.location{
+			color: white;
+		}
+	}
+
+@media only screen and (min-width: 601px){
+     nav ul li{
+		display: inline-block;
+		margin-right: 20px;
+		font-size: 10px;
+	}
+	.logo-name img{
+			width: 40px;
+			margin-left:10px;
+			margin-top:5px;
+		}
+		.name{
+			margin-left: 10px;
+			font-size: 10px;
+		}
+		.sub-name{
+			margin-left: 12px;
+			font-size: 8px;
+		}
+
+	nav a{
+		color: black;
+	}
+	.registration{
+			font-size: 15px;
+			color: white;
+		}
+	  label{
+			font-size:18px;
+			color: white;
+		}
+	}
+
+@media only screen and (min-width: 900px){
+	   nav ul li{
+		display: inline-block;
+		margin-right: 45px;
+		font-size: 15px;
+	}
+	 .logo-name img{
+			width: 60px;
+			margin-left:5px;
+			margin-top:5px;
+		}
+		.name{
+			margin-left: 10px;
+			font-size: 14px;
+		}
+		.sub-name{
+			margin-left: 12px;
+			font-size: 10px;
+		}
+		.registration{
+			font-size: 15px;
+			color: white;
+		}
+		  label{
+			font-size:18px;
+			color: black;
+	}
+}

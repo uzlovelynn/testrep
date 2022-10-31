@@ -1,0 +1,168 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-
+	scale=1.0">
+	<title>Dripping Pen</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'css/BOOKS.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'fontawesome/css/all.min.css' %}">
+	
+
+	<style type="text/css">
+		
+		 /*  .description{
+		   	line-height: 5px;
+		   }*/
+		   
+
+		  
+
+	</style>
+</head>
+<body>
+
+	<div class="container">
+		<div header>
+		  <div class="navbar">
+			<div class="logo-name">
+				<div class="logo">
+				<img src="../static/img/writy.jpeg">
+			</div>
+				<div class="description">
+				<h2 class="name">Dripping<span><i>Pen</i></span></h2>
+				<i><p class="sub-name">Words Of Reality..</p></i>
+			</div>
+			</div>
+
+			<nav>
+				<ul  id="menuitems">
+					<li><a href="{% url 'soft' %}">HOME</a></li>
+					<li><a href="/BLOG">BLOG</a></li>
+					<li><a href="/ABOUT_US">ABOUT-US</a></li>
+					<li><a href="/FAQs">FAQs</a></li>
+					<li><a href="/REGISTRATION">REGISTRATION</a></li>
+					<li><a href="/LOGIN">LOGIN</a></li>
+				</ul>
+
+			</nav>
+
+         <img src="../static/img/icon.jpg" class="menu-icon" onclick="menutoggle()">
+
+		
+		<form action="{% url 'search' %}" method="GET">
+		<div class="search">
+			 <div class="path" style="margin-top: 12px;">
+			 	<a href="#"> TAP TO SEARCH</a>
+			 </div>
+
+			<div class="srch">
+			<input class="one" type="text" name="q" value="{{request.GET.q}}" placeholder="search">
+			<button class="buttn" value="search">Search</button>
+		  </div>
+		</div>
+	</form>
+
+		</div>
+	</div>
+</div>
+<hr>
+
+
+<div class="box">
+	<div class="tittle">
+		<div class="topic">
+			<h2><i>Indecisive Words Of Reality...</i></h2>
+			<i>(The Untold Stories Of The Heart In It's Reality)</i>
+		</div>
+	</div>
+	
+</div>
+
+
+<div class="boxx">
+	<div class="mini-box">
+		{% for top in top %}
+		<div class="cover-page">
+			<a href="{% url 'detail_view' top.id %}"><img src={{top.image.url}}></a>
+			<a href="{% url 'detail_view' top.id %}"><i class="rate">{{top.title}}..</i></a>
+			<a href="{% url 'detail_view' top.id %}"><p class="author">{{top.name}}</p></a>
+		</div>
+		{% endfor %}
+
+<!-- 
+		<div class="cover-page">
+			<a href=""><img src="../static/img/cil.jpg"></a>
+			<a href=""><p class="rate">Beyond Knowledge</p></a>
+		</div>
+
+			<div class="cover-page">
+			<a href=""><img src="../static/img/Girl with pencil pen.jpg"></a>
+			<a href=""><p class="rate">Beyond Knowledge</p></a>
+		</div>
+
+			<div class="cover-page">
+			<a href=""><img src="../static/img/wryt.jpeg"></a>
+			<a href=""><p class="rate">Beyond Knowledge</p></a>
+		</div>
+			<div class="cover-page">
+			<a href=""><img src="../static/img/runing.jpg" height="149px"></a>
+			<a href=""><p class="rate">Beyond Knowledge</p></a>
+		</div> -->
+
+		
+	</div>
+</div>
+
+
+<div class="footer">
+		<div class="bxx">
+			<div class="mini-bxx">
+					<div class="social-media">
+					<ul>
+						<li><a href="" class="fab fa-facebook" style="color:#3b5998;"></a></li>
+						<li><a href="" class="fab fa-twitter" style="color:#00aced"></a></li>
+						<li><a href="" class="fab fa-instagram" style="color:#cb2027;"></a></li>
+						<li><a href="" class="fab fa-youtube" style="color:#bb0000;"></a></li>
+						<li><a href="" class="fab fa-whatsapp" style="color:#075e54;"></a></li>
+						
+					</ul>
+				</div>
+				<hr class="line">
+				<p class="copyright">copyright 2022 - CaZ</p>
+			</div>
+		</div>
+	</div>
+
+</body>
+
+
+<script text="text/javascript" src="{% static 'jquery/jquery.js' %}"></script>
+	<script> 
+
+
+$(document).ready(function(){
+		$(".path").on('click',(function(){
+		$(".srch").fadeToggle();
+}));
+	});
+
+var menuitems =document.getElementById("menuitems");
+
+		  menuitems.style.maxHeight ="0px";
+
+		function menutoggle(){
+			if(menuitems.style.maxHeight =="0px")
+			     {
+				     menuitems.style.maxHeight ="200px";
+			     }
+			else
+			     {
+				     menuitems.style.maxHeight ="0px";
+			     }
+		}
+</script>
+</html>
+<footer>
+	
+</footer>

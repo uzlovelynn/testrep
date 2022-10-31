@@ -1,0 +1,101 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="{% static 'css/FAQs.css' %}">
+	<style type="text/css">
+		
+	</style>
+</head>
+<body>
+  
+  <div class="container">
+		<div header>
+		  <div class="navbar">
+			<div class="logo-name">
+				<div class="logo">
+				<img src="../static/img/writy.jpeg">
+			</div>
+				<div class="description">
+				<h2 class="name">Dripping<span><i>Pen</i></span></h2>
+				<i><p class="sub-name">Words Of Reality..</p></i>
+			</div>
+			</div>
+
+			<nav>
+				<ul  id="menuitems">
+					<li><a href="{% url 'soft' %}">HOME</a></li>
+					<li><a href="/BLOG">BLOG</a></li>
+					<li><a href="/ABOUT_US">ABOUT-US</a></li>
+					<li><a href="/FAQs">FAQs</a></li>
+					<li><a href="/REGISTRATION">REGISTRATION</a></li>
+					<li><a href="/LOGIN">LOGIN</a></li>
+				</ul>
+
+			</nav>
+			 <img src="../static/img/icon.jpg" class="menu-icon" onclick="menutoggle()">
+		</div>
+	</div>
+</div>
+<hr>
+
+
+
+<div class="faq">
+ <div class="total_comment">
+{% with frequent.count as total_frequent %}
+<p>{{total_frequent}} QUESTIONS{{total_count|pluralize}}</p>
+{% endwith  %}
+</div> 
+
+
+
+{% if  new_frequent %}
+<p>your questions has been added</p>
+{% else %}
+<p>add new questions</p>
+
+
+<form method="post" action="."> 
+{{frequent_form.as_p}}
+{% csrf_token %}
+<input type="submit" value="Add questions">
+</form>
+{% endif %}
+
+
+
+
+{% for frequent in frequent %}
+<div class="comment">
+	<small style="color: white;">question {{forloop.counter}} by {{frequent.name}}</small>
+	<p>{{frequent.Question|linebreaks}}</p>
+
+</div>
+{% empty %}
+<p>no question</p>
+{% endfor %}
+
+</div>
+
+</body>
+
+
+<script type="text/javascript">
+var menuitems =document.getElementById("menuitems");
+
+		  menuitems.style.maxHeight ="0px";
+
+		function menutoggle(){
+			if(menuitems.style.maxHeight =="0px")
+			     {
+				     menuitems.style.maxHeight ="200px";
+			     }
+			else
+			     {
+				     menuitems.style.maxHeight ="0px";
+			     }
+		}
+	</script>
+</html>
